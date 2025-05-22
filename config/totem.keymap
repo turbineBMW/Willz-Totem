@@ -151,7 +151,7 @@
             bindings = <
            &kp Q  &kp W  &kp E            &kp R                  &kp T                      &kp Y                    &kp U                        &kp I            &kp O    &kp P
            &kp A  &kp S  &hml LEFT_GUI D  &hml LEFT_SHIFT F      &hml LEFT_ALT G            &hmr LEFT_ALT H          &hmr LEFT_SHIFT J            &hmr LEFT_GUI K  &kp L    &kp SEMICOLON
-&lt 3 TAB  &kp Z  &kp X  &kp C            &hml LEFT_CONTROL V    &hml LS(LEFT_CONTROL) B    &hmr LS(LEFT_CONTROL) N  &hmr LEFT_CONTROL M          &kp COMMA        &kp DOT  &comment_or 0 SLASH  &lt 3 SQT
+&lt 3 TAB  &kp Z  &kp X  &kp C            &hml LEFT_CONTROL V    &hml LS(LEFT_CONTROL) B    &hmr LS(LEFT_CONTROL) N  &hmr LEFT_CONTROL M          &kp COMMA        &kp DOT  &kp SLASH  &lt 3 SQT
                          &kp GRAVE        &hml LC(LEFT_WIN) ESC  &lt 1 SPACE                &lt 2 ENTER              &hmr LC(LEFT_GUI) BACKSPACE  &kp BACKSLASH
             >;
         };
