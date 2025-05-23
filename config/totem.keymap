@@ -22,13 +22,6 @@
 #define SYS  3
 #define QUICK_TAP_MS 175
 
-&mt {
-    quick-tap-ms = <100>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    tapping-term-ms = <170>;
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -77,6 +70,12 @@
 
         dash {
             bindings = <&kp MINUS>;
+            key-positions = <6 7>;
+            timeout-ms = <30>;
+        };
+
+        quote {
+            bindings = <&kp SQT>;
             key-positions = <16 17>;
             timeout-ms = <30>;
         };
@@ -113,17 +112,15 @@
     };
 
     behaviors {
-        // this is homerow mod that works identical to urob's one, but this one allows visual editor to understand
 
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
             bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
             hold-trigger-on-release;
         };
 
@@ -132,12 +129,12 @@
             label = "HMR";
             bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
             hold-trigger-on-release;
         };
+
     };
 
     keymap {
@@ -148,8 +145,8 @@
             bindings = <
            &kp Q  &kp W  &kp E            &kp R                  &kp T                      &kp Y                    &kp U                        &kp I            &kp O    &kp P
            &kp A  &kp S  &hml LEFT_GUI D  &hml LEFT_SHIFT F      &hml LEFT_ALT G            &hmr LEFT_ALT H          &hmr LEFT_SHIFT J            &hmr LEFT_GUI K  &kp L    &kp SEMICOLON
-&lt 3 TAB  &kp Z  &kp X  &kp C            &hml LEFT_CONTROL V    &hml LS(LEFT_CONTROL) B    &hmr LS(LEFT_CONTROL) N  &hmr LEFT_CONTROL M          &kp COMMA        &kp DOT  &kp SLASH      &lt 3 SQT
-                         &kp GRAVE        &hml LC(LEFT_WIN) ESC  &lt 1 SPACE                &lt 2 ENTER              &hmr LC(LEFT_GUI) BACKSPACE  &kp BACKSLASH
+&lt 3 ESC  &kp Z  &kp X  &kp C            &hml LEFT_CONTROL V    &hml LS(LEFT_CONTROL) B    &hmr LS(LEFT_CONTROL) N  &hmr LEFT_CONTROL M          &kp COMMA        &kp DOT  &kp SLASH      &lt 3 TAB
+                         &kp GRAVE        &hml LC(LEFT_WIN) DEL  &lt 1 SPACE                &lt 2 ENTER              &hmr LC(LEFT_GUI) BACKSPACE  &kp BACKSLASH
             >;
         };
 
