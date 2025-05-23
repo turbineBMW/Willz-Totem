@@ -22,6 +22,13 @@
 #define SYS  3
 #define QUICK_TAP_MS 175
 
+&mt {
+    quick-tap-ms = <100>;
+    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <170>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -118,6 +125,7 @@
             label = "HML";
             bindings = <&kp>, <&kp>;
 
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
@@ -129,12 +137,12 @@
             label = "HMR";
             bindings = <&kp>, <&kp>;
 
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
         };
-
     };
 
     keymap {
