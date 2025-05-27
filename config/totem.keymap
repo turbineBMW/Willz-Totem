@@ -15,6 +15,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -150,10 +151,10 @@
         QWERTY {
             label = "BASE";
             bindings = <
-           &kp Q  &kp W  &kp E         &kp R              &kp T                  &kp Y                &kp U                    &kp I          &kp O    &kp P
-           &kp A  &kp S  &hml LCTRL D  &hml LEFT_SHIFT F  &kp G                  &kp H                &hmr LEFT_SHIFT J        &hmr LCTRL K   &kp L    &kp SEMICOLON
-&lt 3 ESC  &kp Z  &kp X  &kp C         &hml LEFT_GUI V    &hml LS(LEFT_GUI) B    &hmr LS(LEFT_GUI) N  &hmr LEFT_GUI M          &kp COMMA      &kp DOT  &kp SLASH      &lt 3 TAB
-                         &kp GRAVE     &hml LEFT_ALT DEL  &lt 1 SPACE            &lt 2 ENTER          &hmr LEFT_ALT BACKSPACE  &kp BACKSLASH
+           &kp Q  &kp W  &kp E         &kp R                  &kp T                  &kp Y                &kp U                        &kp I          &kp O    &kp P
+           &kp A  &kp S  &hml LCTRL D  &hml LEFT_SHIFT F      &hml LA(LEFT_ALT) G    &hmr LEFT_ALT H      &hmr LEFT_SHIFT J            &hmr LCTRL K   &kp L    &kp SEMICOLON
+&lt 3 ESC  &kp Z  &kp X  &kp C         &hml LEFT_GUI V        &hml LS(LEFT_GUI) B    &hmr LS(LEFT_GUI) N  &hmr LEFT_GUI M              &kp COMMA      &kp DOT  &kp SLASH      &lt 3 TAB
+                         &kp GRAVE     &hml LC(LEFT_ALT) DEL  &lt 1 SPACE            &lt 2 ENTER          &hmr LC(LEFT_ALT) BACKSPACE  &kp BACKSLASH
             >;
         };
 
