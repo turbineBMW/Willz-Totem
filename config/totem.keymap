@@ -15,6 +15,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -94,13 +95,13 @@
         };
 
         lefttab {
-            bindings = <&kp LC(PAGE_UP)>;
+            bindings = <&kp LC(LS(TAB))>;
             key-positions = <12 11>;
             timeout-ms = <30>;
         };
 
         righttab {
-            bindings = <&kp LC(PAGE_DOWN)>;
+            bindings = <&kp LC(TAB)>;
             key-positions = <17 18>;
             timeout-ms = <30>;
         };
@@ -119,7 +120,6 @@
     };
 
     behaviors {
-
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
@@ -151,17 +151,17 @@
         QWERTY {
             label = "BASE";
             bindings = <
-           &kp Q  &kp W  &kp E            &kp R                  &kp T                      &kp Y                    &kp U                        &kp I            &kp O    &kp P
-           &kp A  &kp S  &hml LEFT_GUI D  &hml LEFT_SHIFT F      &hml LEFT_ALT G            &hmr LEFT_ALT H          &hmr LEFT_SHIFT J            &hmr LEFT_GUI K  &kp L    &kp SEMICOLON
-&lt 3 ESC  &kp Z  &kp X  &kp C            &hml LEFT_CONTROL V    &hml LS(LEFT_CONTROL) B    &hmr LS(LEFT_CONTROL) N  &hmr LEFT_CONTROL M          &kp COMMA        &kp DOT  &kp SLASH      &lt 3 TAB
-                         &kp GRAVE        &hml LC(LEFT_WIN) DEL  &lt 1 SPACE                &lt 2 ENTER              &hmr LC(LEFT_GUI) BACKSPACE  &kp BACKSLASH
+           &kp Q  &kp W  &kp E         &kp R              &kp T                  &kp Y                &kp U                    &kp I          &kp O    &kp P
+           &kp A  &kp S  &hml LCTRL D  &hml LEFT_SHIFT F  &kp G                  &kp H                &hmr LEFT_SHIFT J        &hmr LCTRL K   &kp L    &kp SEMICOLON
+&lt 3 ESC  &kp Z  &kp X  &kp C         &hml LEFT_GUI V    &hml LS(LEFT_GUI) B    &hmr LS(LEFT_GUI) N  &hmr LEFT_GUI M          &kp COMMA      &kp DOT  &kp SLASH      &lt 3 TAB
+                         &kp GRAVE     &hml LEFT_ALT DEL  &lt 1 SPACE            &lt 2 ENTER          &hmr LEFT_ALT BACKSPACE  &kp BACKSLASH
             >;
         };
 
         Navigation {
             label = "Navigation";
             bindings = <
-       &none  &none  &none         &none      &none            &kp HOME        &kp LC(LEFT)    &kp LC(RIGHT)  &kp END          &none
+       &none  &none  &none         &none      &none            &kp LG(LEFT)    &kp LC(LEFT)    &kp LC(RIGHT)  &kp LG(RIGHT)    &none
        &none  &none  &kp LEFT_GUI  &kp LSHFT  &kp LEFT_ALT     &kp LEFT        &kp DOWN        &kp UP_ARROW   &kp RIGHT        &msc SCRL_UP
 &none  &none  &none  &none         &kp LCTRL  &kp LS(LCTRL)    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &msc SCRL_DOWN  &kp CAPSLOCK
                      &none         &trans     &trans           &mkp LCLK       &mkp RCLK       &none
