@@ -164,7 +164,7 @@
             label = "WORTABLEFT_LG";
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
-            keep-mods = <0>;
+            // no keep-mods: preserves held mods on fallback so ⌘W still works
             bindings = <&kp W>, <&wortableft_la>;
         };
 
@@ -172,18 +172,19 @@
             compatible = "zmk,behavior-mod-morph";
             label = "WORTABLEFT_LA";
             #binding-cells = <0>;
-            mods = <(MOD_LALT)>;        // fixed: cmods -> mods
-            keep-mods = <0>;
+            mods = <(MOD_LALT)>;
+            // no keep-mods: preserves ⌘⌥W etc. on fallback
             bindings = <&kp W>, <&wortableft_lc>;
         };
 
+        // Innermost: only when LG+LA+LC all held → emit F24 (Karabiner remaps it)
         wortableft_lc: wortableft_lc {
             compatible = "zmk,behavior-mod-morph";
             label = "WORTABLEFT_LC";
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
-            keep-mods = <0>;
-            bindings = <&kp W>, <&kp LC(LS(TAB))>;
+            // no keep-mods on purpose; output is a dead key
+            bindings = <&kp W>, <&kp F24>;
         };
     };
 
