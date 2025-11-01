@@ -29,7 +29,7 @@
     tapping-term-ms = <170>;
 };
 
-/ {
+ / {
     combos {
         compatible = "zmk,combos";
 
@@ -158,6 +158,7 @@
             hold-trigger-on-release;
         };
 
+        // Nested mod-morphs to require LG + LA + LC
         wortableft_lg: wortableft_lg {
             compatible = "zmk,behavior-mod-morph";
             label = "WORTABLEFT_LG";
@@ -171,7 +172,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "WORTABLEFT_LA";
             #binding-cells = <0>;
-            cmods = <(MOD_LALT)>;
+            mods = <(MOD_LALT)>;        // fixed: cmods -> mods
             keep-mods = <0>;
             bindings = <&kp W>, <&wortableft_lc>;
         };
@@ -185,8 +186,6 @@
             bindings = <&kp W>, <&kp LC(LS(TAB))>;
         };
     };
-};
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -195,9 +194,9 @@
             label = "BASE";
             bindings = <
                           &kp Q    &wortableft_lg  &kp E                 &kp R                 &kp T              &kp Y            &kp U                    &kp I                 &kp O    &kp P
-                          &kp A    &kp S        &hml LEFT_ALT D       &hml LEFT_SHIFT F     &hml LEFT_ALT G    &hmr LEFT_ALT H  &hmr LEFT_SHIFT J        &lt 3 K               &kp L    &kp SEMICOLON
+                          &kp A    &kp S           &hml LEFT_ALT D       &hml LEFT_SHIFT F     &hml LEFT_ALT G    &hmr LEFT_ALT H  &hmr LEFT_SHIFT J        &lt 3 K                &kp L    &kp SEMICOLON
 &kp LA(LC(LS(LEFT_GUI)))  &lt 4 Z  &kp X        &kp C                 &hml LCTRL V          &kp B              &kp N            &hmr LCTRL M             &kp COMMA             &kp DOT  &lt 4 SLASH    &kp LC(LA(LS(LEFT_GUI)))
-                                                &kp LA(LC(LEFT_GUI))  &hml LEFT_GUI ESCAPE  &lt 1 SPACE        &lt 2 ENTER      &hmr LEFT_GUI BACKSPACE  &kp LA(LC(LEFT_GUI))
+                                                &kp LA(LC(LEFT_GUI))  &hml LEFT_GUI ESCAPE  &lt 1 SPACE          &lt 2 ENTER       &hmr LEFT_GUI BACKSPACE  &kp LA(LC(LEFT_GUI))
             >;
         };
 
@@ -205,7 +204,7 @@
             label = "Navigation";
             bindings = <
        &none  &none  &none         &none      &none            &kp HOME        &kp LC(LEFT)    &kp LC(RIGHT)  &kp END          &none
-       &none  &none  &kp LEFT_GUI  &kp LSHFT  &kp LEFT_ALT     &kp LEFT        &kp DOWN        &kp UP_ARROW   &kp RIGHT        &msc SCRL_UP
+       &none  &none  &kp LEFT_GUI  &kp LSHFT  &kp LEFT_ALT     &kp LEFT        &kp DOWN        &kp UP         &kp RIGHT        &msc SCRL_UP
 &to 0  &none  &none  &none         &kp LCTRL  &kp LS(LCTRL)    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &msc SCRL_DOWN  &kp CAPSLOCK
                      &none         &trans     &trans           &mkp LCLK       &mkp RCLK       &none
             >;
@@ -216,7 +215,7 @@
             bindings = <
             &kp C_PREVIOUS    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp C_VOLUME_UP      &none                 &none           &none         &none  &none
             &kp C_NEXT        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp NUMBER_0         &kp LEFT_ALT          &kp LEFT_SHIFT  &kp LEFT_GUI  &none  &none
-&kp C_MUTE  &kp C_PLAY_PAUSE  &kp N7        &kp N8        &kp N9        &kp C_VOLUME_DOWN    &kp LS(LEFT_CONTROL)  &kp LCTRL       &none         &none  &none  &to 0
+&kp C_MUTE  &kp C_PLAY_PAUSE  &kp N7        &kp N8        &kp N9        &kp C_VOLUME_DOWN    &kp LS(LCTRL)         &kp LCTRL       &none         &none  &none  &to 0
                                             &trans        &trans        &trans               &trans                &trans          &trans
             >;
         };
