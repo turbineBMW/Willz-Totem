@@ -158,14 +158,34 @@
             hold-trigger-on-release;
         };
 
-        wortableft: wortableft {
+        wortableft_lg: wortableft_lg {
             compatible = "zmk,behavior-mod-morph";
-            label = "WORTABLEFT";
-            bindings = <&kp W>, <&kp LC(LS(TAB))>;
-
+            label = "WORTABLEFT_LG";
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <0>;
+            bindings = <&kp W>, <&wortableft_la>;
         };
+
+        wortableft_la: wortableft_la {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WORTABLEFT_LA";
+            #binding-cells = <0>;
+            cmods = <(MOD_LALT)>;
+            keep-mods = <0>;
+            bindings = <&kp W>, <&wortableft_lc>;
+        };
+
+        wortableft_lc: wortableft_lc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WORTABLEFT_LC";
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+            keep-mods = <0>;
+            bindings = <&kp W>, <&kp LC(LS(TAB))>;
+        };
+    };
+};
     };
 
     keymap {
@@ -174,7 +194,7 @@
         QWERTY {
             label = "BASE";
             bindings = <
-                          &kp Q    &wortableft  &kp E                 &kp R                 &kp T              &kp Y            &kp U                    &kp I                 &kp O    &kp P
+                          &kp Q    &wortableft_lg  &kp E                 &kp R                 &kp T              &kp Y            &kp U                    &kp I                 &kp O    &kp P
                           &kp A    &kp S        &hml LEFT_ALT D       &hml LEFT_SHIFT F     &hml LEFT_ALT G    &hmr LEFT_ALT H  &hmr LEFT_SHIFT J        &lt 3 K               &kp L    &kp SEMICOLON
 &kp LA(LC(LS(LEFT_GUI)))  &lt 4 Z  &kp X        &kp C                 &hml LCTRL V          &kp B              &kp N            &hmr LCTRL M             &kp COMMA             &kp DOT  &lt 4 SLASH    &kp LC(LA(LS(LEFT_GUI)))
                                                 &kp LA(LC(LEFT_GUI))  &hml LEFT_GUI ESCAPE  &lt 1 SPACE        &lt 2 ENTER      &hmr LEFT_GUI BACKSPACE  &kp LA(LC(LEFT_GUI))
