@@ -15,6 +15,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -169,13 +170,13 @@
 
             // no keep-mods on purpose; output is a dead key
 
-            bindings = <&kp W>, <&kp LG(LA(RIGHT))>;
+            bindings = <&kp W>, <&kp LC(PAGE_UP)>;
         };
 
         portabright: portabright {
             compatible = "zmk,behavior-mod-morph";
             label = "PORTABRIGHT";
-            bindings = <&kp R>, <&kp LA(LG(RIGHT))>;
+            bindings = <&kp R>, <&kp LC(PAGE_DOWN)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
