@@ -170,13 +170,13 @@
 
             // no keep-mods on purpose; output is a dead key
 
-            bindings = <&kp W>, <&kp LC(LS(TAB))>;
+            bindings = <&kp W>, <&kp LG(LA(RIGHT))>;
         };
 
         portabright: portabright {
             compatible = "zmk,behavior-mod-morph";
             label = "PORTABRIGHT";
-            bindings = <&kp R>, <&kp LC(TAB)>;
+            bindings = <&kp R>, <&kp LA(LG(RIGHT))>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
