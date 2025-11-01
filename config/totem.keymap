@@ -15,6 +15,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -175,7 +176,7 @@
         portabright: portabright {
             compatible = "zmk,behavior-mod-morph";
             label = "PORTABRIGHT";
-            bindings = <&kp P>, <&kp LC(TAB)>;
+            bindings = <&kp R>, <&kp LC(TAB)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
