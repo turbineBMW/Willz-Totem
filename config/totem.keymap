@@ -106,7 +106,7 @@
         Navigation {
             label = "Navigation";
             bindings = <
-       &none  &none         &none         &none      &none            &kp LG(LEFT)    &kp LA(LEFT)    &kp LA(RIGHT)  &kp LG(RIGHT)    &none
+       &none  &none         &none         &none      &none            &kp HOME        &kp LA(LEFT)    &kp LA(RIGHT)  &kp END          &none
        &none  &kp LEFT_ALT  &kp LEFT_GUI  &kp LSHFT  &none            &kp LEFT        &kp DOWN        &kp UP         &kp RIGHT        &msc SCRL_UP
 &none  &none  &none         &none         &kp LCTRL  &kp LS(LCTRL)    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &msc SCRL_DOWN  &none
                             &none         &none      &none            &mkp LCLK       &mkp RCLK       &none
