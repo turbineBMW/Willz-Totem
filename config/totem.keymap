@@ -15,6 +15,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -82,7 +83,7 @@
         portabright: portabright {
             compatible = "zmk,behavior-mod-morph";
             label = "PORTABRIGHT";
-            bindings = <&kp R>, <&kp LC(PAGE_DOWN)>;
+            bindings = <&kp P>, <&kp LC(PAGE_DOWN)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
@@ -95,10 +96,10 @@
         QWERTY {
             label = "BASE";
             bindings = <
-         &kp Q    &wortableft  &kp E         &portabright          &kp T                  &kp Y                &kp U                    &kp I         &kp O    &kp P
-         &kp A    &kp S        &hml LCTRL D  &hml LEFT_SHIFT F     &kp G                  &kp H                &hmr LEFT_SHIFT J        &hmr LCTRL K  &kp L    &kp SEMICOLON
-&kp TAB  &lt 5 Z  &kp X        &kp C         &hml LEFT_GUI V       &hml LS(LEFT_GUI) B    &hmr LS(LEFT_GUI) N  &hmr LEFT_GUI M          &kp COMMA     &kp DOT  &lt 5 SLASH    &kp SINGLE_QUOTE
-                               &mo 3         &hml LEFT_ALT ESCAPE  &lt 1 SPACE            &lt 2 ENTER          &hmr LEFT_ALT BACKSPACE  &mo 4
+         &kp Q    &wortableft  &kp F            &portabright          &kp G               &kp J             &kp L                    &kp U            &kp Y    &kp SEMICOLON
+         &kp A    &kp R        &hml LEFT_ALT S  &hml LEFT_SHIFT T     &kp D               &kp H             &hmr LEFT_SHIFT N        &hmr LEFT_ALT E  &kp I    &kp O
+&kp TAB  &lt 5 Z  &kp X        &kp C            &hml LCTRL V          &hml LS(LCTRL) B    &hmr LS(LCTRL) K  &hmr LCTRL M             &kp COMMA        &kp DOT  &lt 5 SLASH    &kp SINGLE_QUOTE
+                               &mo 3            &hml LEFT_GUI ESCAPE  &lt 1 SPACE         &lt 2 ENTER       &hmr LEFT_GUI BACKSPACE  &mo 4
             >;
         };
 
