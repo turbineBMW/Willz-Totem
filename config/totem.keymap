@@ -33,7 +33,7 @@
         compatible = "zmk,combos";
 
         mousewarp {
-            bindings = <&kp LA(LG(Z))>;
+            bindings = <&kp LC(LG(LS(Z)))>;
             key-positions = <34 35>;
             timeout-ms = <30>;
         };
